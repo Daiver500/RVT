@@ -1,0 +1,128 @@
+.navigation {
+  padding-top: 7.5px;
+  padding-bottom: 30px;
+  background-color: $white;
+}
+
+.navigation__inner {
+  display: flex;
+  flex-direction: column;
+  max-width: 1300px;
+}
+
+.navigation__upper-part {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.navigation__toggle-mobile {
+  display: none;
+}
+
+.navigation__toggle {
+  min-width: 180px;
+  background-color: $blue;
+  padding-top: 10px;
+  padding-bottom: 9px;
+  border: none;
+  color: $white;
+  font-size: 16px;
+  line-height: 19.09px;
+  font-weight: 600;
+  max-height: 38px;
+  border-radius: 5px;
+  margin-top: 7px;
+  cursor: pointer;
+}
+
+.navigation__toggle:hover,
+.navigation__toggle:focus {
+  opacity: 0.5;
+}
+
+.navigation__input {
+  min-width: 734px;
+  max-height: 38px;
+  margin-top: 7px;
+  padding-left: 86px;
+  border-radius: 8px;
+  background-color: $bg;
+  border: 1px solid rgba(52, 125, 184, 0.15);
+  margin-right: 30px;
+}
+
+/*.navigation__upper-part::before {
+  content: "";
+  position: absolute;
+  background-image: url("../../img/search-icon.svg");
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 18px;
+  top: 18px;
+  left: 344px;
+}
+
+.navigation__upper-part::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 36px;
+  top: 7px;
+  left: 376px;
+  border: 1px solid rgba(52, 125, 184, 0.15);
+}*/
+
+.navigation__logo {
+  padding-right: 74px;
+}
+
+.navigation__menu {
+  display: flex;
+}
+
+.navigation__list {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: max-content max-content max-content max-content max-content;
+  grid-gap: 85px;
+  margin: 0;
+}
+
+.navigation__item {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+  color: $nav-color;
+}
+
+.navigation__item:hover span,
+.navigation__item:focus span {
+  color: $blue;
+}
+
+.navigation__item:last-child {
+  padding-left: 18px;
+  position: relative;
+}
+
+.navigation__item:last-child::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-image: url("../../img/calculator.svg");
+  background-repeat: no-repeat;
+  top: 0;
+  left: -6px;
+}
+
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .navigation__list {
+    grid-gap: 45px;
+  }
+}
+

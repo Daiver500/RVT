@@ -17,7 +17,6 @@
   <header class="page-header">
     <nav class="navigation">
       <div class="navigation__inner container">
-        <div class="navigation__top">
           <div class="navigation__upper-part">
             <a class="navigation__logo" aria-label="логотип">
               <img src="img/logo.jpg" srcset="img/logo@2x.jpg 2x" alt="логотип" width="254" height="56" />
@@ -27,7 +26,6 @@
             </button>
             <button class="navigation__toggle" type="button" aria-label="добавить компанию">Добавить компанию +
             </button>
-           </div>
           </div>
           <div class="navigation__menu">
             <ul class="navigation__list">
@@ -50,125 +48,129 @@
         <div class="calculator__body">
           <h1 class="calculator__title">Калькулятор ремонта</h1>
           <div class="calculator__form form">
-            <div class="form__group selects">
-              <ul class="selects__list">
-                <li class="selects__item">
-                    <label class="selects__label">
-                      <select class="selects__select">
-                        <option class="selects__option">Новостройка</option>
-                        <option class="selects__option">Вторичка</option>
+              <ul class="form__list">
+                <li class="form__item form__item-active">
+                    <label class="form__label">
+                      Тип помещения
+                      <select class="form__select">
+                        <option class="form__option">Новостройка</option>
+                        <option class="form__option">Вторичка</option>
                     </select>
-                        Тип помещения<span>*</span>
                     </label>
                 </li>
-                <li class="selects__item">
-                  <label class="selects__label">
-                    <select class="selects__select">
-                      <option class="selects__option">Нет</option>
-                      <option class="selects__option">Да</option>
-                  </select>
-                      Электрика<span>*</span>
+                <li class="form__item">
+                  <label class="form__label">
+                    Площадь ремонта
+                      <input class="form__select" type="text" name="square" />
+                       <div class="form__controls">
+                        <div class="from__scale">
+                          <div class="form__bar"></div>
+                        </div>
+                        <div class="form__toggle" tabindex="0">
+                         </div>
+                      </div>
                   </label>
               </li>
-              <li class="selects__item">
-                <label class="selects__label">
-                  <select class="selects__select">
-                    <option class="selects__option">Косметический</option>
-                    <option class="selects__option">Евро ремонт</option>
-                </select>
-                    Тип ремонта<span>*</span>
-                </label>
-            </li>
-            <li class="selects__item">
-              <label class="selects__label">
-                <select class="selects__select">
-                  <option class="selects__option">Да</option>
-                  <option class="selects__option">Нет</option>
-              </select>
-                  Ремонт санузла<span>*</span>
-              </label>
-          </li>
-          <li class="selects__item">
-            <label class="selects__label">
-              <select class="selects__select">
-                <option class="selects__option">Да</option>
-                <option class="selects__option">Нет</option>
-            </select>
-                Теплые полы<span>*</span>
-            </label>
-        </li>
-        <li class="selects__item">
-          <label class="selects__label">
-            <select class="selects__select">
-              <option class="selects__option">Нет</option>
-              <option class="selects__option">Да</option>
-          </select>
-              Двери<span>*</span>
-          </label>
-      </li>
               </ul>
-            </div>
-            <div class="form__group inputs">
-               <ul class="inputs__list">
-                   <li class="inputs__item">
-                        <label class="inputs__label">
-                            <input class="inputs__input" type="text" name="square" />
-                            Площадь ремонта<span>*</span>
-                            <div class="range__controls">
-                              <div class="range__scale">
-                                <div class="range__bar"></div>
-                              </div>
-                              <div class="range__toggle" tabindex="0">
-                               </div>
-                            </div>
-                          </div>
-                        </label>
-                    </li>
-                        <li class="inputs__item">
-                           <label class="inputs__label">
-                               <input class="inputs__input" type="text" name="square" />
-                               Общий периметр стен<span>*</span>
-                           </label>
-                       </li>
-                       <li class="inputs__item">
-                        <label class="inputs__label">
-                          <select class="inputs__select">
-                            <option class="inputs__option">Нет</option>
-                            <option class="inputs__option">Да</option>
-                        </select>
-                            Потолки<span>*</span>
-                        </label>
-                    </li>
-                    <li class="inputs__item">
-                      <label class="inputs__label">
-                          <input class="inputs__input" type="text" name="square" />
-                          Площадь санузла<span>*</span>
-                          <div class="range__controls">
-                            <div class="range__scale">
-                              <div class="range__bar"></div>
-                            </div>
-                            <div class="range__toggle" tabindex="0">
-                             </div>
-                          </div>
-                        </div>
-                      </label>
-                  </li>
-                </ul>
-                <div class="form__checkbox checkbox">
-                  <p class="checkbox__title">Входная дверь:<span>*</span></p>
-                  <label class="checkbox__label">
-                    <input class="checkbox__input" type="checkbox" name="Slider" checked />
-                    <span class="checkbox__box " tabindex="0"></span>
-                    <span class="checkbox__text checkbox__text--active">Нет</span>
-                    <span class="checkbox__text">Да</span>
+              <ul class="form__list">
+                <li class="form__item form__item-active">
+                    <label class="form__label">
+                      Электрика
+                      <select class="form__select">
+                        <option class="form__option">Нет</option>
+                        <option class="form__option">Да</option>
+                    </select>
+                    </label>
+                </li>
+                <li class="form__item">
+                  <label class="form__label">
+                    Общий периметр стен
+                      <input class="form__select" type="text" name="square" placeholder="50 м" />
                   </label>
-                </div>
+              </li>
+              </ul>   <ul class="form__list">
+                <li class="form__item form__item-active">
+                    <label class="form__label">
+                      Тип ремонта
+                      <select class="form__select">
+                        <option class="form__option">Косметический</option>
+                        <option class="form__option">Евроремонт</option>
+                    </select>
+                    </label>
+                </li>
+                <li class="form__item form__item-active">
+                  <label class="form__label">
+                    Потолки
+                    <select class="form__select">
+                      <option class="form__option">Да</option>
+                      <option class="form__option">Нет</option>
+                  </select>
+                  </label>
+              </li>
+              </ul>   <ul class="form__list">
+                <li class="form__item form__item-active">
+                    <label class="form__label">
+                      Ремонт санузла
+                      <select class="form__select">
+                        <option class="form__option">Да</option>
+                        <option class="form__option">Нет</option>
+                    </select>
+                    </label>
+                </li>
+                <li class="form__item">
+                  <label class="form__label">
+                    Площадь санузла
+                      <input class="form__select form__select-small" type="text" name="square" />
+                       <div class="form__controls">
+                        <div class="from__scale">
+                          <div class="form__bar"></div>
+                        </div>
+                        <div class="form__toggle" tabindex="0">
+                         </div>
+                      </div>
+                  </label>
+              </li>
+              </ul>   <ul class="form__list">
+                <li class="form__item form__item-active">
+                    <label class="form__label">
+                      Теплые полы
+                      <select class="form__select">
+                        <option class="form__option">Да</option>
+                        <option class="form__option">Нет</option>
+                    </select>
+                    </label>
+                </li>
+
+              </ul>
+              <ul class="form__list">
+                <li class="form__item form__item-active">
+                    <label class="form__label">
+                      Двери
+                      <select class="form__select">
+                        <option class="form__option">Нет</option>
+                        <option class="form__option">Да</option>
+                    </select>
+                    </label>
+                </li>
+                <li class="form__item form__checkbox checkbox">
+
+                    <p class="checkbox__title">Входная дверь:</p>
+                    <label class="checkbox__label">
+                      <input class="checkbox__input" type="checkbox" name="Slider" checked />
+                      <span class="checkbox__box " tabindex="0"></span>
+                      <span class="checkbox__text checkbox__text--active">Нет</span>
+                      <span class="checkbox__text">Да</span>
+                    </label>
+
+              </li>
+              </ul>
+
             </div>
             </div>
             <div class="calculator__result">
                <div class="calculator__result-wrapper">
                  <p class="calculator__price">Стоимость вашего ремонта</p>
-                 <p class="calculator__summ">Итого: <span>140 000</span></p>
+                 <p class="calculator__summ">Итого:<span>140 000 руб.</span></p>
                </div>
                <div class="calculator__reminder">
                  <p class="calculator__reminder-text">*Напоминаем, что это примерная стоимость</p>
@@ -177,7 +179,7 @@
         </div>
       </section>
       <aside class="companies">
-        <h2 class="companies__title">Лучшие компании по дизайну интерьеров</h2>
+        <h2 class="companies__header">Лучшие компании по дизайну интерьеров</h2>
         <ul class="companies__list">
           <li class="companies__item">
             <img class="companies__image" src="img/company-logo.jpg" srcset="img/company-logo@2x.jpg 2x" alt="логотип компаний из списка" width="42" height="42" />

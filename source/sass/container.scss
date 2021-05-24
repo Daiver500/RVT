@@ -1,17 +1,17 @@
 .container {
-  min-width: 1920px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 10px;
 }
 
-@media (min-width: $min-tablet-width) {
+@media (max-width: $max-tablet-width) {
   .container {
-    min-width: 768px;
+    max-width: 1023px;
   }
 }
 
-@media (min-width: $min-mobile-width) {
+@media (max-width: $max-mobile-width) {
   .container {
-    max-width: 320px;
+    max-width: 767px;
   }
 }
