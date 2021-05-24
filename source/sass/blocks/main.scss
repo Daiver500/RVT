@@ -1,3 +1,9 @@
+@media (max-width: 1560px) {
+  .form__list {
+    flex-direction: column;
+  }
+}
+
 .main__inner {
   display: flex;
   padding-top: 30px;
@@ -5,6 +11,7 @@
 
 .calculator {
   padding-right: 30px;
+  flex-grow: 1;
 }
 
 .calculator__header {
@@ -277,6 +284,7 @@
   padding-bottom: 33px;
   background-color: $white;
   max-width: 407px;
+  flex-grow: 1;
 }
 
 .companies__header {
@@ -330,14 +338,6 @@
   color: $blue;
 }
 
-@media (max-width: 1560px) {
-  .form__list {
-    flex-direction: column;
-  }
 
-  .calculator__body {
-    max-width: 750px;
-  }
-}
 
 

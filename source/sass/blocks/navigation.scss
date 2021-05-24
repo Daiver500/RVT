@@ -43,7 +43,7 @@
 }
 
 .navigation__input {
-  min-width: 734px;
+  max-width: 734px;
   max-height: 38px;
   margin-top: 7px;
   padding-left: 86px;
@@ -51,6 +51,7 @@
   background-color: $bg;
   border: 1px solid rgba(52, 125, 184, 0.15);
   margin-right: 30px;
+  flex-grow: 1;
 }
 
 /*.navigation__upper-part::before {
