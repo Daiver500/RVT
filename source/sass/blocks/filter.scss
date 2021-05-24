@@ -1,0 +1,441 @@
+.catalog__filter {
+  max-width: 250px;
+}
+
+.catalog__form {
+  border: 1px solid $brown;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 35px;
+  min-width: 250px;
+}
+
+
+.catalog__title-filter {
+  font-weight: 500;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.checkbox__text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18.2px;
+  text-align: start;
+}
+
+.catalog__rangebox {
+  margin: 0;
+  padding: 0;
+  border: none;
+  position: relative;
+}
+
+.catalog__range {
+  width: 200px;
+  margin-bottom: 54px;
+}
+
+.range__controls {
+  position: relative;
+  height: 41px;
+  background-color: $white;
+  border-radius: 5px;
+  margin-bottom: 17px;
+  padding-top: 39px;
+}
+
+.range__scale {
+  height: 2px;
+  background: $light-brown;
+}
+
+.range__bar {
+  height: 2px;
+  background: $brown;
+  width: 50%;
+  margin-left: 26%;
+}
+
+.range__toggle {
+  position: absolute;
+  top: 33px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  background-color: $brown;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.range__toggle--min {
+  left: 25%;
+}
+
+.range__toggle--max {
+  left: 70%;
+}
+
+.catalog__checkbox {
+  border: none;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+}
+
+.catalog__checkbox,
+.catalog__rangebox {
+  padding-left: 25px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+}
+
+.catalog__checkbox::after {
+  content: "";
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  background-repeat: no-repeat;
+  height: 1px;
+  border: 1px solid $brown;
+  width: 100%;
+}
+
+.checkbox__form {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.checkbox__line {
+  padding-bottom: 15px;
+}
+
+.checkbox__label {
+  padding-left: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox__input {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.checkbox__box {
+  position: absolute;
+  width: 16px;
+  height: 15px;
+  margin-left: 0;
+  background-image: url("../img/chekbox-not-checked.svg");
+  background-repeat: no-repeat;
+  left: 0;
+  top: 2px;
+}
+
+.checkbox__input:checked + .checkbox__box {
+  background-image: url("../img/checkbox-checked.svg");
+  background-repeat: no-repeat;
+}
+
+.checkbox__input:hover + .checkbox__box,
+.checkbox__input:focus + .checkbox__box {
+  background-image: url("../img/chekbox-not-checked.svg");
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
+
+.checkbox__input:checked:hover + .checkbox__box,
+.checkbox__input:checked:focus + .checkbox__box {
+  background-image: url("../img/checkbox-checked.svg");
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
+
+.filter__buttons {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.filter__button {
+  padding-top: 28px;
+  padding-bottom: 28px;
+  border: none;
+  cursor: pointer;
+  color: $white;
+  background-color: $brown;
+  max-height: 74px;
+}
+
+.filter__button--apply {
+  margin-bottom: 25px;
+}
+
+.filter__button--apply:hover,
+.filter__button--apply:focus,
+.filter__button--clear:hover,
+.filter__button--clear:focus {
+  color: $black;
+  background-color: $white;
+  border: 1px solid $brown;
+}
+
+.form__button {
+  border: none;
+  background-color: inherit;
+  position: absolute;
+  top: 0;
+  right: 30px;
+  background-image: url("../img/down-button.svg");
+  background-repeat: no-repeat;
+  width: 17px;
+  height: 10px;
+  cursor: pointer;
+}
+
+.checkbox__form--active {
+  display: block;
+}
+
+.form__button--active {
+  background-image: url("../img/up-button.svg");
+}
+
+.catalog__filter-button-close {
+  display: none;
+}
+
+@media (max-width: $max-tablet-width) {
+  .catalog__filter {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: $white;
+    flex-direction: column;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    min-width: 458px;
+    margin-bottom: 30px;
+  }
+
+  .catalog__filter-button-close {
+    display: block;
+    border: none;
+    position: absolute;
+    top: -31px;
+    right: -16px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .catalog__form {
+    display: flex;
+    flex-direction: column;
+    width: 458px;
+    //min-height: 440px;
+    position: relative;
+    top: calc(50% - 295px);
+    right: 0;
+    left: 0;
+    bottom: auto;
+    margin: auto;
+    text-align: left;
+    z-index: 2;
+    background-color: $white;
+    margin-top: 15px;
+    border: none;
+    padding: 25px 0;
+    margin-bottom: 0;
+  }
+
+  .filter__buttons {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    padding-left: 25px;
+    margin-bottom: 40px;
+  }
+
+  .filter__button {
+    padding-top: 28px;
+    padding-bottom: 28px;
+    border: none;
+    cursor: pointer;
+    color: $white;
+    background-color: $brown;
+    max-height: 68px;
+    width: 362px;
+  }
+
+  .filter__button--apply {
+    margin-bottom: 25px;
+  }
+
+
+  .filter-page__inner {
+    display: flex;
+    flex-direction: column;
+    width: 458px;
+    //min-height: 440px;
+    position: relative;
+    top: calc(50% - 295px);
+    right: 0;
+    left: 0;
+    bottom: auto;
+    margin: auto;
+    text-align: left;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    background-color: $white;
+    margin-top: 15px;
+  }
+
+  .filter-page {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: $white;
+  }
+
+  .filter-page__buttons {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    padding-left: 25px;
+    margin-bottom: 40px;
+  }
+
+  .filter-page__button {
+    padding-top: 28px;
+    padding-bottom: 28px;
+    border: none;
+    cursor: pointer;
+    color: $white;
+    background-color: $brown;
+    max-height: 68px;
+    width: 362px;
+  }
+
+  .filter-page__button--apply {
+    margin-bottom: 25px;
+  }
+
+  .filter-page__button--apply:hover,
+  .filter-page__button--apply:focus,
+  .filter-page__button--clear:hover,
+  .filter-page__button--clear:focus {
+    color: $black;
+    background-color: $white;
+    border: 1px solid $brown;
+  }
+
+  .catalog__title-filter {
+    font-size: 18px;
+    line-height: 23.4px;
+  }
+
+  .filter-page__button-close {
+    background-color: inherit;
+    border: none;
+    position: absolute;
+    top: -15px;
+    right: -20px;
+  }
+
+  .filter-page__button-close svg path {
+    color: $white;
+  }
+
+  .form__button {
+    right: 44px;
+  }
+
+  .form__button svg {
+    width: 23px;
+    height: 12px;
+  }
+
+  .catalog__checkbox,
+  .catalog__rangebox {
+    position: relative;
+    padding-left: 25px;
+  }
+
+  .catalog__checkbox::after,
+  .catalog__rangebox::after {
+    content: "";
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    background-repeat: no-repeat;
+    height: 1px;
+    border: 1px solid $brown;
+    width: 100%;
+  }
+
+  .range__controls {
+    padding-top: 17px;
+  }
+
+  .range__toggle {
+    top: 11px;
+  }
+
+  .checkbox__text {
+    font-size: 16px;
+    line-height: 20.8px;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: $max-mobile-width) {
+  .filter-page__inner {
+    width: 270px;
+  }
+
+  .filter-page__buttons {
+    padding-left: 20px;
+    margin-bottom: 90px;
+  }
+
+  .filter-page__button {
+    width: 230px;
+  }
+
+  .catalog__form {
+    padding: 35px 0;
+    width: 290px;
+  }
+
+  .catalog__filter {
+    min-width: 290px;
+  }
+
+  .filter__buttons {
+    padding-left: 15px;
+  }
+
+  .filter__button {
+    width: 260px;
+  }
+}

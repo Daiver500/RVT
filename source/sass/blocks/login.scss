@@ -1,0 +1,229 @@
+.login__inner,
+.login-success__inner {
+  display: flex;
+  width: 442px;
+  min-height: 586px;
+  position: relative;
+  top: calc(50% - 295px);
+  right: 0;
+  left: 0;
+  bottom: auto;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  background-color: $login-bg;
+}
+
+.login__inner {
+  flex-direction: column;
+}
+
+.login,
+.login-success {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: $white;
+}
+
+.login__data {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 45px;
+  position: relative;
+}
+
+.login__data::before,
+.login__data::after {
+  content: "";
+  position: absolute;
+  left: 45px;
+  background-repeat: no-repeat;
+  height: 1px;
+  min-width: 340px;
+  border: 1px solid $brown;
+}
+
+.login__data::before {
+  top: 180px;
+}
+
+.login__data::after {
+  top: 248px;
+}
+
+.login__header,
+.login__text {
+  margin-top: 0;
+}
+
+.login__header {
+  margin-bottom: 45px;
+  font-family: "Cormorant-Garamond", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 44.2px;
+  color: $black;
+}
+
+.login__form input {
+  min-width: 340px;
+  min-height: 30px;
+  border: none;
+  background-color: $login-bg;
+  color: $grey;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+  position: relative;
+}
+
+.login__close:hover,
+.login__close:focus,
+.login-success__close:hover,
+.login-success__close:focus,
+.login__form input:hover,
+.login__form input:focus {
+  opacity: 0.5;
+}
+
+.login__mail {
+  margin-bottom: 40px;
+}
+
+.login__link {
+  text-align: right;
+}
+
+.login__link span {
+  color: $grey;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.login__link span:hover,
+.login__link span:focus {
+  opacity: 0.5;
+}
+
+.login__button {
+  font-weight: 500;
+  color: $white;
+  border: none;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background-color: $brown;
+  cursor: pointer;
+  margin-top: 50px;
+  margin-bottom: 34px;
+  min-height: 68px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.login__button:hover,
+.login__button:focus {
+  background-color: $white;
+  color: $black;
+  border: 1px solid $brown;
+}
+
+.login__text {
+  margin-bottom: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: $grey;
+}
+
+.login__sign-up-text {
+  color: $black;
+}
+
+.login-success__title {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  max-width: 340px;
+}
+
+.login-success__text {
+  font-family: "Cormorant-Garamond", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 44.2px;
+  color: $black;
+}
+
+.login__close,
+.login-success__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 26px;
+  height: 28px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+
+@media (max-width: $max-mobile-width) {
+  .login__inner,
+  .login-success__inner {
+    width: 100%;
+    //margin-left: 15px;
+    //margin-right: 15px;
+  }
+
+  .login__data::after,
+  .login__data::before {
+    min-width: 87%;
+    left: 5%;
+    right: 5%;
+  }
+
+  .login__data::before {
+    top: 147px;
+  }
+
+  .login__data::after {
+    top: 215px;
+  }
+
+  .login__form input {
+    min-width: 100%;
+  }
+
+  .login__data {
+    padding: 45px 15px;
+  }
+
+  .login__header {
+    margin-bottom: 40px;
+    font-size: 24px;
+    line-height: 31.2px;
+  }
+
+  .login__link span {
+    padding-right: 15px;
+  }
+
+  .login__button {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    min-width: 240px;
+  }
+}
