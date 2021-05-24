@@ -1,9 +1,3 @@
-@media (max-width: 1560px) {
-  .form__list {
-    flex-direction: column;
-  }
-}
-
 .main__inner {
   display: flex;
   padding-top: 30px;
@@ -18,9 +12,20 @@
   padding-top: 39px;
   padding-bottom: 39px;
   padding-left: 45px;
+  padding-right: 10px;
   background-color: $white;
   max-width: 850px;
   margin-bottom: 27px;
+  position: relative;
+}
+
+.calculator__header::before {
+  content: "";
+  position: absolute;
+  height: 160px;
+  border: 2px solid $blue;
+  left: 0;
+  top: 7px;
 }
 
 .calculator__text {
@@ -81,8 +86,9 @@
   line-height: 24px;
   font-weight: 400;
   margin-top: 5px;
-  min-width: 318px;
+  max-width: 318px;
   appearance: none;
+  background-color: white;
 }
 
 .form__select-small {
@@ -178,26 +184,27 @@
   width: 60px;
   height: 32px;
   margin-left: 0;
-  background-image: url("../../img/checkbox-not-active.jpg");
+  background-image: url("../../img/chekbox-active.jpg");
   background-repeat: no-repeat;
   left: 0;
   top: 2px;
 }
 
 .checkbox__input:checked + .checkbox__box {
-  background-image: url("../../img/chekbox-active.jpg");
+  background-image: url("../../img/checkbox-not-active.jpg");
   background-repeat: no-repeat;
 }
 
 .checkbox__input:hover + .checkbox__box,
 .checkbox__input:focus + .checkbox__box {
-
-  opacity: 0.5;
+  border: 1px solid $blue;
+  border-radius: 15px;
 }
 
 .checkbox__input:checked:hover + .checkbox__box,
 .checkbox__input:checked:focus + .checkbox__box {
-  opacity: 0.5;
+  border: 1px solid $input-text;
+  border-radius: 15px;
 }
 
 .checkbox__text {
@@ -334,10 +341,110 @@
   padding: 5px;
 }
 
-.companies__text span {
+.companies__text-numbers {
   color: $blue;
 }
 
+@media (min-width: $desktop-width) {
+  .calculator__body {
+    background-color: $white;
+    padding-left: 44px;
+    padding-right: 115px;
+    padding-top: 91px;
+    padding-bottom: 64px;
+    max-width: 845px;
+  }
+
+  .form__select {
+    border: 1px solid $border;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 17px;
+    color: $input-text;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    margin-top: 5px;
+    min-width: 318px;
+    appearance: none;
+  }
+}
+
+@media (max-width: $max-desktop-width) {
+  .calculator__body {
+    background-color: $white;
+    padding-left: 44px;
+    padding-right: 50px;
+    padding-top: 91px;
+    padding-bottom: 64px;
+    max-width: 845px;
+  }
+
+  .form__select {
+    border: 1px solid $border;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 17px;
+    color: $input-text;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    margin-top: 5px;
+    max-width: 318px;
+    appearance: none;
+  }
+
+  .form__list {
+    flex-direction: column;
+    position: relative;
+  }
+
+  .form__checkbox {
+    position: absolute;
+    left: 320px;
+  }
+
+  .calculator__result {
+    flex-direction: column-reverse;
+  }
+
+  .calculator__result-wrapper {
+    margin: 0;
+  }
+
+  .calculator__reminder-text {
+    margin-bottom: 21px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .companies__header {
+    font-size: 14px;
+    line-height: 17.33px;
+    text-align: center;
+  }
+
+  .companies__text-letters {
+    display: none;
+  }
+
+  .companies__item img {
+    max-width: 24px;
+    max-height: 24px;
+    padding-right: 5px;
+    padding-top: 4px;
+  }
+
+  .companies__title {
+    margin: 0;
+    font-size: 10px;
+    line-height: 12px;
+    padding-right: 2px;
+  }
+
+  .companies__title span {
+    display: none;
+  }
 
 
-
+}
