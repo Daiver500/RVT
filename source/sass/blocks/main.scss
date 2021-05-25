@@ -397,6 +397,11 @@
   .form__list {
     flex-direction: column;
     position: relative;
+    margin-bottom: 0;
+  }
+
+  .form__item {
+    margin-bottom: 20px;
   }
 
   .form__checkbox {
