@@ -184,14 +184,14 @@
   width: 60px;
   height: 32px;
   margin-left: 0;
-  background-image: url("../../img/chekbox-active.jpg");
+  background-image: url("../img/chekbox-active.jpg");
   background-repeat: no-repeat;
   left: 0;
   top: 2px;
 }
 
 .checkbox__input:checked + .checkbox__box {
-  background-image: url("../../img/checkbox-not-active.jpg");
+  background-image: url("../img/checkbox-not-active.jpg");
   background-repeat: no-repeat;
 }
 
@@ -345,6 +345,11 @@
   color: $blue;
 }
 
+.form__select:hover,
+.form__select:focus {
+  border: 1px solid $blue;
+}
+
 @media (max-width: $max-tablet-width) {
   .calculator__body {
     background-color: $white;
@@ -425,6 +430,69 @@
   .companies__title span {
     display: none;
   }
+}
 
+@media (max-width: $max-mobile-width) {
+  .companies {
+    display: none;
+  }
 
+  .calculator {
+    padding-right: 0;
+  }
+
+  .main__inner {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .calculator__header {
+    padding: 12px 16px 19px 17px;
+    max-width: 100%;
+  }
+
+  .calculator__body {
+    padding: 16px;
+    max-width: 100%;
+  }
+
+  .form__item {
+    padding-right: 0;
+    min-width: 288px;
+  }
+
+  .form__item-active::after {
+    right: 20px;
+  }
+
+  .calculator__reminder-text {
+    max-width: 293px;
+  }
+
+  .calculator__result-wrapper {
+    padding: 13px 41px 17px 42px;
+    align-items: center;
+  }
+
+  .calculator__summ {
+    font-size: 18px;
+    line-height: 21.6px;
+    font-weight: 400;
+  }
+
+  .calculator__summ span {
+    font-size: 24px;
+    line-height: 29.71px;
+    padding-left: 10px;
+  }
+
+  .calculator__header::before {
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+}
+
+.hidden {
+  display: none;
 }

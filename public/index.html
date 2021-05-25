@@ -116,7 +116,7 @@
                 <li class="form__item form__item-active">
                     <label class="form__label">
                       Ремонт санузла
-                      <select class="form__select">
+                      <select id="wc-repair" class="form__select">
                         <option class="form__option">Да</option>
                         <option class="form__option">Нет</option>
                     </select>
@@ -125,7 +125,7 @@
                 <li class="form__item">
                   <label class="form__label">
                     Площадь санузла
-                      <input class="form__select form__select-small" type="text" name="square" />
+                      <input id="wc-square" class="form__select form__select-small" type="text" name="square"/>
                        <div class="form__controls">
                         <div class="from__scale">
                           <div class="form__bar"></div>
@@ -175,7 +175,7 @@
             <div class="calculator__result">
                <div class="calculator__result-wrapper">
                  <p class="calculator__price">Стоимость вашего ремонта</p>
-                 <p class="calculator__summ">Итого:<span>140 000 руб.</span></p>
+                 <p class="calculator__summ">Итого:<span class="calculator__rate">140 000 руб.</span></p>
                </div>
                <div class="calculator__reminder">
                  <p class="calculator__reminder-text">*Напоминаем, что это примерная стоимость</p>
@@ -270,6 +270,6 @@
       </aside>
     </section>
   </main>
-
+<script src="js/main.js"></script>
 </body>
 </html>
