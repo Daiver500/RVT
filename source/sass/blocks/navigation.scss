@@ -73,7 +73,7 @@
   content: "";
   position: absolute;
   width: 1px;
-  height: 36px;
+  height: 37px;
   top: 7px;
   left: 376px;
   border: 1px solid rgba(52, 125, 184, 0.15);
@@ -125,18 +125,7 @@
   left: -6px;
 }
 
-
-@media (min-width: 768px) and (max-width: 1200px) {
-  .navigation__list {
-    grid-gap: 45px;
-  }
-}
-
 @media (max-width: $max-tablet-width) {
-  .navigation__inner {
-    max-width: 1023px;
-  }
-
   .navigation__toggle-mobile {
     background-image: url("../../img/close-button.svg");
     background-repeat: no-repeat;
@@ -185,7 +174,7 @@
   }
 
   .navigation__input {
-    max-width: 346px;
+    max-width: 100%;
     padding-left: 56px;
     margin-right: 55px;
     font-size: 14px;
@@ -193,11 +182,11 @@
   }
 
   .navigation__upper-part::before {
-    left: 301px;
+    left: 280px;
   }
 
   .navigation__upper-part::after {
-    left: 331px;
+    left: 310px;
   }
 
   .navigation__list {
@@ -218,7 +207,7 @@
   }
 
   .navigation__upper-part {
-    max-width: 768px;
+    max-width: 100%;
   }
 
   .navigation__item::after {

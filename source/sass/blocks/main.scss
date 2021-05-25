@@ -345,32 +345,7 @@
   color: $blue;
 }
 
-@media (min-width: $desktop-width) {
-  .calculator__body {
-    background-color: $white;
-    padding-left: 44px;
-    padding-right: 115px;
-    padding-top: 91px;
-    padding-bottom: 64px;
-    max-width: 845px;
-  }
-
-  .form__select {
-    border: 1px solid $border;
-    padding-top: 13px;
-    padding-bottom: 13px;
-    padding-left: 17px;
-    color: $input-text;
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 400;
-    margin-top: 5px;
-    min-width: 318px;
-    appearance: none;
-  }
-}
-
-@media (max-width: $max-desktop-width) {
+@media (max-width: $max-tablet-width) {
   .calculator__body {
     background-color: $white;
     padding-left: 44px;
