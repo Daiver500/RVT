@@ -1,33 +1,5 @@
 "use strict"
 
-const repairWC = document.getElementById("wc-repair");
-const wcSquare = document.getElementById("wc-square");
-
-const blockWcInput = () => {
-if (repairWC.value === "Да") {
-  wcSquare.disabled = false;
-  } else if (repairWC.value === "Нет") {
-  wcSquare.disabled = true;
-  wcSquare.value = ``;
-  }
-};
-
-repairWC.addEventListener("change", blockWcInput);
-repairWC.addEventListener("change", function() {
-	console.log(this.value);
-});
-
-const checkbobxInput = document.querySelector(".checkbox__input");
-const checkboxButtons = document.querySelectorAll(".checkbox__text");
-
-const checkboxClickHandler = () => {
-  checkboxButtons.forEach((item) => {
-    item.classList.toggle("checkbox__text--active");
-  });
-};
-
-checkbobxInput.addEventListener("change", checkboxClickHandler);
-
 const MAX_WC_SQUARE = 20;
 const MAX_APPART_SQUARE = 300;
 const NEW__APP__VALUE = 8000;
@@ -47,12 +19,41 @@ const DOORS__YES = 8500;
 const HEATED__FLOOR__YES = 200;
 
 let result = document.querySelector(".calculator__rate");
+const repairWC = document.getElementById("wc-repair");
+const wcSquare = document.getElementById("wc-square");
 const calculatorForm = document.querySelector(".calculator__form");
 const typeOfBuilding = document.getElementById("type-of-building");
 const squareOfBuilding = document.getElementById("square-of-building");
 const electricityCost = document.getElementById("electricity");
 const typeOfRepair = document.getElementById("type-of-repair");
 const roof = document.getElementById("roof");
+const checkbobxInput = document.querySelector(".checkbox__input");
+const checkboxButtons = document.querySelectorAll(".checkbox__text");
+
+// Клик на на кнопку "Двери"
+
+const checkboxClickHandler = () => {
+  checkboxButtons.forEach((item) => {
+    item.classList.toggle("checkbox__text--active");
+  });
+};
+
+checkbobxInput.addEventListener("change", checkboxClickHandler);
+
+// Блок инпута санузла
+
+const blockWcInput = () => {
+  if (repairWC.value === "Да") {
+    wcSquare.disabled = false;
+    } else if (repairWC.value === "Нет") {
+    wcSquare.disabled = true;
+    wcSquare.value = ``;
+    }
+  };
+
+repairWC.addEventListener("change", blockWcInput);
+
+// Фильтр
 
 const test = (max, min) => {
   if (typeOfBuilding.value === "Новостройка") {

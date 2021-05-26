@@ -1,3 +1,6 @@
+"use strict"
+
+// Меню
 
 const navigationMenu = document.querySelector(".navigation__menu");
 const navigationToggleMobile = document.querySelector(".navigation__toggle-mobile");
