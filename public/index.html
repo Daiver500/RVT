@@ -57,7 +57,7 @@
                 <li class="form__item form__item-active">
                     <label class="form__label">
                       Тип помещения
-                      <select class="form__select">
+                      <select id="type-of-building" class="form__select">
                         <option class="form__option">Новостройка</option>
                         <option class="form__option">Вторичка</option>
                     </select>
@@ -66,7 +66,7 @@
                 <li class="form__item">
                   <label class="form__label">
                     Площадь ремонта
-                      <input class="form__select" type="text" name="square" />
+                      <input id="square-of-building" class="form__select" type="text" name="square"/>
                        <div class="form__controls">
                         <div class="from__scale">
                           <div class="form__bar"></div>
@@ -81,9 +81,10 @@
                 <li class="form__item form__item-active">
                     <label class="form__label">
                       Электрика
-                      <select class="form__select">
+                      <select id="electricity" class="form__select">
                         <option class="form__option">Нет</option>
-                        <option class="form__option">Да</option>
+                        <option class="form__option">Частичная</option>
+                        <option class="form__option">Новая</option>
                     </select>
                     </label>
                 </li>
@@ -99,7 +100,8 @@
                       Тип ремонта
                       <select class="form__select">
                         <option class="form__option">Косметический</option>
-                        <option class="form__option">Евроремонт</option>
+                        <option class="form__option">Дизайнерский</option>
+                        <option class="form__option">Капитальный</option>
                     </select>
                     </label>
                 </li>
@@ -175,7 +177,7 @@
             <div class="calculator__result">
                <div class="calculator__result-wrapper">
                  <p class="calculator__price">Стоимость вашего ремонта</p>
-                 <p class="calculator__summ">Итого:<span class="calculator__rate">140 000 руб.</span></p>
+                 <p class="calculator__summ">Итого:<span class="calculator__rate">0 руб.</span></p>
                </div>
                <div class="calculator__reminder">
                  <p class="calculator__reminder-text">*Напоминаем, что это примерная стоимость</p>
