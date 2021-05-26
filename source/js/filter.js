@@ -37,6 +37,7 @@ const doors = document.getElementById("doors");
 const doorsQuantity = document.getElementById("doors-quantity");
 const checkbobxInput = document.querySelector(".checkbox__input");
 const checkboxButtons = document.querySelectorAll(".checkbox__text");
+const checkboxLabel = document.querySelector(".checkbox__label");
 const checkboxButton = document.querySelector(".checkbox__text");
 
 // Клик на кнопку "Двери"
@@ -51,15 +52,7 @@ checkbobxInput.addEventListener("change", checkboxClickHandler);
 
 // Фильтр
 
-const blockSquareInput = () => {
-  if (squareOfBuilding.value <= 0) {
-    wcSquare.disabled = true;
-    } else if (squareOfBuilding.value > 0) {
-    wcSquare.disabled = false;
-    }
-  };
-
-const test = (max, min) => {
+const getRepairSquarePrice = (max, min) => {
   if (typeOfBuilding.value === "Новостройка") {
 
     return max*squareOfBuilding.value;
@@ -70,7 +63,7 @@ const test = (max, min) => {
   }
 };
 
-const test2 = (max, min, no) => {
+const getElectricityPrice = (max, min, no) => {
   if (electricityCost.value === "Новая") {
 
     return max*squareOfBuilding.value;
@@ -85,7 +78,7 @@ const test2 = (max, min, no) => {
   }
 };
 
-const test3 = (max, min, no) => {
+const getTypeOfRepairPrice = (max, min, no) => {
   if (typeOfRepair.value === "Дизайнерский") {
 
     return max*squareOfBuilding.value;
@@ -100,7 +93,7 @@ const test3 = (max, min, no) => {
   }
 };
 
-const test4 = (max, med, min, no) => {
+const getRoofPrice = (max, med, min, no) => {
    if (roof.value === "Натяжной") {
 
     return min*squareOfBuilding.value;
@@ -119,7 +112,7 @@ const test4 = (max, med, min, no) => {
   }
 };
 
-const test5 = (yes, no) => {
+const getRepairWcPrice = (yes, no) => {
   if (repairWC.value === "Да") {
 
    return yes*wcSquare.value;
@@ -141,7 +134,7 @@ const blockWcInput = () => {
   };
 
 
-  const test6 = (yes, no) => {
+  const getHeatedFloorPrice = (yes, no) => {
     if (heatedFloor.value === "Да") {
 
      return yes*squareOfBuilding.value;
@@ -153,7 +146,7 @@ const blockWcInput = () => {
   };
 
 
-  const test7 = (yes, no) => {
+  const getDoorsPrice = (yes, no) => {
     if (doors.value === "Да") {
 
      return yes*doorsQuantity.value;
@@ -165,16 +158,14 @@ const blockWcInput = () => {
   };
 
 const resultOf = () => {
-result.textContent = test(NEW__APP__VALUE, OLD__APP__VALUE) + test2(ELECTRICITY__FULL, ELECTRICITY__YES, ELECTRICITY__NO) + test3(DESIGN__REPAIR,  FULL_REPAIR, NO__REPAIR)
-+ test4(ROOF__IMPROVED__2, ROOF__IMPROVED, ROOF__SIMPLE, ROOF__NO) + test5(WC__REPAIR__YES, WC__REPAIR__NO) + test6(HEATED__FLOOR__YES, HEATED__FLOOR__NO)
-+ test7(DOORS__YES, DOORS__NO)  + ` руб`;
+result.textContent = getRepairSquarePrice(NEW__APP__VALUE, OLD__APP__VALUE) + getElectricityPrice(ELECTRICITY__FULL, ELECTRICITY__YES, ELECTRICITY__NO) + getTypeOfRepairPrice(DESIGN__REPAIR,  FULL_REPAIR, NO__REPAIR)
++ getRoofPrice(ROOF__IMPROVED__2, ROOF__IMPROVED, ROOF__SIMPLE, ROOF__NO) + getRepairWcPrice(WC__REPAIR__YES, WC__REPAIR__NO) + getHeatedFloorPrice(HEATED__FLOOR__YES, HEATED__FLOOR__NO)
++ getDoorsPrice(DOORS__YES, DOORS__NO)  + ` руб`;
 };
 
-
 calculatorForm.addEventListener("input", resultOf);
-//calculatorForm.addEventListener("change", resultOf);
 repairWC.addEventListener("change", blockWcInput);
-squareOfBuilding.addEventListener("input", blockSquareInput);
+
 
 const squareAppartInputHandler = () => {
   if (squareOfBuilding.value > MAX_APPART_SQUARE) {
