@@ -15,8 +15,13 @@ const ROOF__IMPROVED = 450;
 const ROOF__IMPROVED__2 =600;
 const ROOF__NO = 0;
 const WC__REPAIR__YES = 1300;
-const DOORS__YES = 8500;
+const WC__REPAIR__NO = 0;
 const HEATED__FLOOR__YES = 200;
+const HEATED__FLOOR__NO = 0;
+const DOORS__YES = 8500;
+const DOORS__NO = 0;
+const MAINDOOR__YES = 0.05;
+const MAINDOOR__NO = 0;
 
 let result = document.querySelector(".calculator__rate");
 const repairWC = document.getElementById("wc-repair");
@@ -27,10 +32,14 @@ const squareOfBuilding = document.getElementById("square-of-building");
 const electricityCost = document.getElementById("electricity");
 const typeOfRepair = document.getElementById("type-of-repair");
 const roof = document.getElementById("roof");
+const heatedFloor = document.getElementById("heated-floor");
+const doors = document.getElementById("doors");
+const doorsQuantity = document.getElementById("doors-quantity");
 const checkbobxInput = document.querySelector(".checkbox__input");
 const checkboxButtons = document.querySelectorAll(".checkbox__text");
+const checkboxButton = document.querySelector(".checkbox__text");
 
-// Клик на на кнопку "Двери"
+// Клик на кнопку "Двери"
 
 const checkboxClickHandler = () => {
   checkboxButtons.forEach((item) => {
@@ -40,7 +49,87 @@ const checkboxClickHandler = () => {
 
 checkbobxInput.addEventListener("change", checkboxClickHandler);
 
-// Блок инпута санузла
+// Фильтр
+
+const blockSquareInput = () => {
+  if (squareOfBuilding.value <= 0) {
+    wcSquare.disabled = true;
+    } else if (squareOfBuilding.value > 0) {
+    wcSquare.disabled = false;
+    }
+  };
+
+const test = (max, min) => {
+  if (typeOfBuilding.value === "Новостройка") {
+
+    return max*squareOfBuilding.value;
+  }
+  if (typeOfBuilding.value === "Вторичка") {
+
+    return min*squareOfBuilding.value;
+  }
+};
+
+const test2 = (max, min, no) => {
+  if (electricityCost.value === "Новая") {
+
+    return max*squareOfBuilding.value;
+  }
+  if (electricityCost.value === "Частичная") {
+
+    return min*squareOfBuilding.value;
+  }
+  if (electricityCost.value === "Нет") {
+
+    return no*squareOfBuilding.value;
+  }
+};
+
+const test3 = (max, min, no) => {
+  if (typeOfRepair.value === "Дизайнерский") {
+
+    return max*squareOfBuilding.value;
+  }
+  if (typeOfRepair.value === "Капитальный") {
+
+    return min*squareOfBuilding.value;
+  }
+  if (typeOfRepair.value === "Косметический") {
+
+    return no*squareOfBuilding.value;
+  }
+};
+
+const test4 = (max, med, min, no) => {
+   if (roof.value === "Натяжной") {
+
+    return min*squareOfBuilding.value;
+  }
+  if (roof.value === "Гипсокартон") {
+
+    return med*squareOfBuilding.value;
+  }
+  if (roof.value === "2 уровня гипсокартон") {
+
+    return max*squareOfBuilding.value;
+  }
+  if (roof.value === "Нет") {
+
+    return no*squareOfBuilding.value;
+  }
+};
+
+const test5 = (yes, no) => {
+  if (repairWC.value === "Да") {
+
+   return yes*wcSquare.value;
+ }
+ if (repairWC.value === "Нет") {
+
+   return no*wcSquare.value;
+ }
+};
+
 
 const blockWcInput = () => {
   if (repairWC.value === "Да") {
@@ -51,69 +140,41 @@ const blockWcInput = () => {
     }
   };
 
-repairWC.addEventListener("change", blockWcInput);
 
-// Фильтр
+  const test6 = (yes, no) => {
+    if (heatedFloor.value === "Да") {
 
-const test = (max, min) => {
-  if (typeOfBuilding.value === "Новостройка") {
-    return max*squareOfBuilding.value;
-  }
-  if (typeOfBuilding.value === "Вторичка") {
-    return min*squareOfBuilding.value;
-  }
-};
+     return yes*squareOfBuilding.value;
+   }
+   if (heatedFloor.value === "Нет") {
 
-const test2 = (max, min, no) => {
-  if (electricityCost.value === "Новая") {
-    return max*squareOfBuilding.value;
-  }
-  if (electricityCost.value === "Частичная") {
-    return min*squareOfBuilding.value;
-  }
-  if (electricityCost.value === "Нет") {
-    return no*squareOfBuilding.value;
-  }
-};
+     return no*squareOfBuilding.value;
+   }
+  };
 
-const test3 = (max, min, no) => {
-  if (typeOfRepair.value === "Дизайнерский") {
-    return max*squareOfBuilding.value;
-  }
-  if (typeOfRepair.value === "Капитальный") {
-    return min*squareOfBuilding.value;
-  }
-  if (typeOfRepair.value === "Косметический") {
-    return no*squareOfBuilding.value;
-  }
-};
 
-const test4 = (max, med, min, no) => {
-   if (roof.value === "Натяжной") {
-    return min*squareOfBuilding.value;
-  }
-  if (roof.value === "Гипсокартон") {
-    return med*squareOfBuilding.value;
-  }
-  if (roof.value === "2 уровня гипсокартон") {
-    return max*squareOfBuilding.value;
-  }
-  if (roof.value === "Нет") {
-    return no*squareOfBuilding.value;
-  }
-};
+  const test7 = (yes, no) => {
+    if (doors.value === "Да") {
 
-//const newItem = test(NEW__APP__VALUE, OLD__APP__VALUE);
+     return yes*doorsQuantity.value;
+   }
+   if (doors.value === "Нет") {
+
+     return no;
+   }
+  };
+
 const resultOf = () => {
-result.textContent = test(NEW__APP__VALUE, OLD__APP__VALUE) + test2(ELECTRICITY__FULL, ELECTRICITY__YES, ELECTRICITY__NO) + test3(DESIGN__REPAIR,  FULL_REPAIR, NO__REPAIR) + test4(ROOF__IMPROVED__2, ROOF__IMPROVED, ROOF__SIMPLE, ROOF__NO) + ` руб`;
-}
+result.textContent = test(NEW__APP__VALUE, OLD__APP__VALUE) + test2(ELECTRICITY__FULL, ELECTRICITY__YES, ELECTRICITY__NO) + test3(DESIGN__REPAIR,  FULL_REPAIR, NO__REPAIR)
++ test4(ROOF__IMPROVED__2, ROOF__IMPROVED, ROOF__SIMPLE, ROOF__NO) + test5(WC__REPAIR__YES, WC__REPAIR__NO) + test6(HEATED__FLOOR__YES, HEATED__FLOOR__NO)
++ test7(DOORS__YES, DOORS__NO)  + ` руб`;
+};
 
 
-calculatorForm.addEventListener("change", resultOf);
-squareOfBuilding.addEventListener("input", test);
-squareOfBuilding.addEventListener("input", test2);
-squareOfBuilding.addEventListener("input", test3);
-squareOfBuilding.addEventListener("input", test4);
+calculatorForm.addEventListener("input", resultOf);
+//calculatorForm.addEventListener("change", resultOf);
+repairWC.addEventListener("change", blockWcInput);
+squareOfBuilding.addEventListener("input", blockSquareInput);
 
 const squareAppartInputHandler = () => {
   if (squareOfBuilding.value > MAX_APPART_SQUARE) {

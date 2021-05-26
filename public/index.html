@@ -66,7 +66,7 @@
                 <li class="form__item">
                   <label class="form__label">
                     Площадь ремонта
-                      <input id="square-of-building" class="form__select" type="text" name="square"/>
+                      <input id="square-of-building" class="form__select" type="number" min="1" max="300" name="square" pattern="^[0-9]+$"/>
                        <div class="form__controls">
                         <div class="from__scale">
                           <div class="form__bar"></div>
@@ -90,8 +90,8 @@
                 </li>
                 <li class="form__item">
                   <label class="form__label">
-                    Общий периметр стен
-                      <input class="form__select" type="text" name="square" placeholder="50 м" />
+                    Количество дверей
+                      <input id="doors-quantity" class="form__select" type="number"  type="number" min="0" max="10" name="square" pattern="^[0-9]+$" />
                   </label>
               </li>
               </ul>   <ul class="form__list">
@@ -129,7 +129,7 @@
                 <li class="form__item">
                   <label class="form__label">
                     Площадь санузла
-                      <input id="wc-square" class="form__select form__select-small" type="text" name="square"/>
+                      <input id="wc-square" class="form__select form__select-small" type="number" min="0" max="20" name="square" pattern="^[0-9]+$"/>
                        <div class="form__controls">
                         <div class="from__scale">
                           <div class="form__bar"></div>
@@ -143,10 +143,10 @@
                 <li class="form__item form__item-active">
                     <label class="form__label">
                       Теплые полы
-                      <select class="form__select">
-                        <option class="form__option">Да</option>
+                      <select id="heated-floor" class="form__select">
                         <option class="form__option">Нет</option>
-                    </select>
+                        <option class="form__option">Да</option>
+                     </select>
                     </label>
                 </li>
 
@@ -155,10 +155,10 @@
                 <li class="form__item form__item-active">
                     <label class="form__label">
                       Двери
-                      <select class="form__select">
+                      <select id="doors" class="form__select">
                         <option class="form__option">Нет</option>
                         <option class="form__option">Да</option>
-                    </select>
+                     </select>
                     </label>
                 </li>
                 <li class="form__item form__checkbox checkbox">
