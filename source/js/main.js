@@ -4,8 +4,11 @@
 
 const navigationMenu = document.querySelector(".navigation__menu");
 const navigationToggleMobile = document.querySelector(".navigation__toggle-mobile");
+const mediaQuery = window.matchMedia("(max-width: 1023px)");
 
+if (mediaQuery.matches) {
 navigationMenu.classList.add("hidden");
+
 
 const navigationToggleClickhandler = () => {
   navigationToggleMobile.classList.toggle("navigation__toggle--active");
@@ -14,5 +17,5 @@ const navigationToggleClickhandler = () => {
 };
 
 navigationToggleMobile.addEventListener("click", navigationToggleClickhandler);
-
+}
 
